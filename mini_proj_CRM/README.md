@@ -6,6 +6,8 @@
 
 - django template by bibhasdn , template language support for python highlighting
 
+- sqlite by alexcvzz to explore sqlite
+
 > core setup
 
 virtualenv just like pipenv that creates virtual env that holds all dependencies of the project in django
@@ -101,3 +103,36 @@ Notes
 
                 # inside project dir (virtualenv activated)
                 python manage.py startapp leads
+
+- mentione leads as installed_app in setting.py
+
+- **django models** that refers to the representation of the database schema
+
+- models in django are written as class
+
+- to create schema from models.py
+
+            (in project virtualenv active)
+            python manage.py makemigrations
+
+- migrations-> 0001_initial.py
+
+- **📝NOTE- the migration is just a blueprint class i.e it dont effect the dbsqlite3 file at all**
+
+> **🎯IMP: executing/running the existing migrations that has not been applied/executed/ran yet**
+
+            (in project dir virtualenv from env/Scripts/activate/bat)
+            python manage.py migrate
+            # this will find all migrations in all apps and run and apply all of them that have not been applied yet.
+
+- **📝now on opening the dbsqlite3 it will have a table named lead**
+
+            cntrl+shift+p
+            sqlite
+            open database
+            select the dbsqlite3 file from your project dir
+
+            open the explorer on left
+            sqlite explorer
+
+            check for the new lead table
