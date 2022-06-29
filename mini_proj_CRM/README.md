@@ -155,3 +155,13 @@ Notes
                 from django.contrib.auth import get_user_model
 
 - **But it always a good practice and also practical to customize the user model**
+
+- **📝:IMP so inherit AbstractUserClass from django that gives a basic user class that can be further customized a/c to the needs ref: models.py**
+
+- **📝:IMP to tell django about the user model edit the mainApp->settings.py of the project ref:settings.py**
+
+> 📝:IMP NOTE- makes sure when u make changes to your models.py u delete the dbsqlite file & the migrations folder 0001_initial.py and so on files inside
+> (in the virtual env) python manage.py makemigrations
+> python manage.py migrate
+
+- **the dependencies in migrations file say 0001_initial.py will be exected after the mentioned file in the array like in our case auth**
