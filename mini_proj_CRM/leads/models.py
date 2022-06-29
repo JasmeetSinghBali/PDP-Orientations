@@ -1,4 +1,10 @@
 from django.db import models
+# 📝:IMP get user model is a function to grab user model by django
+from django.contrib.auth import get_user_model
+
+# grab the user from the get_user_model
+User = get_user_model()
+
 
 class Lead(models.Model):
 # Model class props inherited in Lead class so it act as now a model class
@@ -27,5 +33,8 @@ class Lead(models.Model):
     agent = models.ForeignKey("Agent",on_delete=models.CASCADE)# 📝 "Agent" string is written to make ref to the Agent class even if Agent class was declared/defined after the Leads class
 
 class Agent(models.Model):
+    # 📝 on_delete=CASCADE so if a user is deleted than that agent will be deleted as well
+    # 📝 to have 1-1 relation i.e 1 user has exactly 1 agent related to it we use OneToOneField and it works exactly like forign key just the diff is that the relation is 1-1 strict only rather in case of foreign keys where 1 user could have multiple agents
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=20) 
     last_name = models.CharField(max_length=20)

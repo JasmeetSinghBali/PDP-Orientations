@@ -149,3 +149,9 @@ Notes
 - **📝:IMP on_delete=models.SET_NULL,null=True means that the forign key would be set as null for the current table to the table entry to which this foreign key reff to on deletion of that agent**
 
 - **📝:IMP on_delete=models.SET_DEFAULT,default=someDefaultValue means that the forign key would be set as default value given for the current table to the table entry to which this foreign key reff to on deletion of that agent**
+
+> Custom User Model (Django has lot of built in func/mech to handle authentications)
+
+                from django.contrib.auth import get_user_model
+
+- **But it always a good practice and also practical to customize the user model**
