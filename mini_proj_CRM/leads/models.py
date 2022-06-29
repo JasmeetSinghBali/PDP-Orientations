@@ -22,5 +22,10 @@ class Lead(models.Model):
     # profile_picture = models.ImageField(blank=True,null=True) # blank True means empty string, null means that their is no value in database
     # special_files = models.FileField() # files, it is actually reff to the actual file stored in DB
 
-    #COMPLEX RELATIONSHIPS TABLE COLUMNS
-    
+    #📝 COMPLEX RELATIONSHIPS TABLE COLUMNS
+    # FOREIGN KEY
+    agent = models.ForeignKey("Agent",on_delete=models.CASCADE)# 📝 "Agent" string is written to make ref to the Agent class even if Agent class was declared/defined after the Leads class
+
+class Agent(models.Model):
+    first_name = models.CharField(max_length=20) 
+    last_name = models.CharField(max_length=20)

@@ -136,3 +136,16 @@ Notes
             sqlite explorer
 
             check for the new lead table
+
+> Foreign Keys (Relationship managment in SQL)
+
+- ref leads->models.py
+- **📝:IMP Foreignkeys always required on_delete positional argument it tells django how to handle when the related table row or instance is deleted. for case like where we deleted an agent that belong to lead then in that case what happens to the foreign key relation**
+
+> 📝:IMP on_delete (ref:models.py)
+
+- **📝:IMP on_delete=models.CASCADE means if agent is deleted then the corresponding table for lead entry will also be deleted that holds the relation with the deleted agent**
+
+- **📝:IMP on_delete=models.SET_NULL,null=True means that the forign key would be set as null for the current table to the table entry to which this foreign key reff to on deletion of that agent**
+
+- **📝:IMP on_delete=models.SET_DEFAULT,default=someDefaultValue means that the forign key would be set as default value given for the current table to the table entry to which this foreign key reff to on deletion of that agent**
