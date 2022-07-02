@@ -97,7 +97,7 @@ Notes
 - timezones configs
 - static urls
 
-> Project walkthorugh
+> ## Project walkthorugh
 
 - Leads app - as the CRM revolve arounds managing leads.
 
@@ -165,3 +165,5 @@ Notes
 > python manage.py migrate
 
 - **the dependencies in migrations file say 0001_initial.py will be exected after the mentioned file in the array like in our case auth**
+
+> QuerySets & Model Managers
