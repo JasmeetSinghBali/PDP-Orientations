@@ -258,3 +258,13 @@ Notes
 
                 # output
                 <jack sparrow>
+
+> Django Admin (can be logged in by staff user or superuser)
+
+                (in env) virtual env activate.bat
+                python manage.py runserver
+
+                # go to localhost:8000/admin
+                # login via superuser creds created earlier
+
+1:46
