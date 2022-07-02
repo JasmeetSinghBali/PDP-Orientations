@@ -167,3 +167,94 @@ Notes
 - **the dependencies in migrations file say 0001_initial.py will be exected after the mentioned file in the array like in our case auth**
 
 > QuerySets & Model Managers
+
+- **📝: IMP to access model managers say the model class named as class Agents then Agents.objects(helps to access model manager)**
+
+                # some methods on model manager
+                # syntax- ModelClassName.objects.method(...schemaProps|| none)
+                Lead.objects(firstName="john",lastName="wick",age=35)
+
+                # QuerySets
+                # query for all Lead in database
+                Lead.objects.all()
+
+                # query for Lead with age greater than 30
+                Lead.objects.filter(age__gt=30)
+
+                # query a specific firstName lead
+                Lead.objects.filter(firstName="john")
+
+- **📝:IMP a python shell can be created in django that will have access to the project**
+
+                # in virtual (env) of the project
+                /pathtoproj/env/Scripts/activate.bat
+                python manage.py shell
+
+                # importing models into the shell
+                from leads.models import Lead
+
+                # now model manager can be used to run query or apply methods on this model
+
+                Lead.objects.all()
+
+> 📝: IMP create first superadminuser
+
+                # make sure you are out of python shell if not type exit()
+                python manage.py createsuperuser
+
+                # open the shell again
+                python manage.py shell
+
+                # import User model from django settings in shell
+                from django.contrib.auth import get_user_model
+                User = get_user_model()
+                User.objects.all()
+
+                # output
+                <queryset username>(of the super user u creatd with createsuperuser command earlier)
+
+                # cntrl + shift + p
+                sqlite open connection
+                choose db.sqlite3 inside project dir (mini_proj_crm)
+
+                # go to lead_user
+                and right click-> show table
+
+                # importing Agent model and creating new Agent
+                from leads.models import Agent
+                # grab the superuser
+                admin_user = User.objects.get(username="jassi")
+                admin_user
+                agent = Agent.objects.create(user=admin_user)
+
+> 📝: IMP for getting the string representation of the model we have to define a function in models.py in Agent section with
+
+                def __str__(self): (ref model.py)
+
+
+                # exit out of shell
+                exit()
+
+                python manage.py shell
+
+                from leads.models import Agent
+                Agent.object.all()
+
+> 🚫 conclusion: django has built in ORM to interact with object models with model manager methods & query sets without the need to write SQL queries
+
+                # creating a new lead
+                >>>from leads.models import Lead
+                # ADVANCE LOOKUP WITH REF - querying the Agent model via user with __ to filter by fields
+                >>>jassi_agent = Agent.objects.get(user__email="devs.us.1984@gmail.com")
+                >>>jassi_agent
+                >>>Lead.objects.create(first_name="jack", last_name="sparrow", age=40, agent=jassi_agent)
+
+
+                # add string represent for Lead model as well via def __str__(self)
+                # exit()
+                python manage.py shell
+                from leads.models import Lead
+                Lead.objects.all()
+
+                # output
+                <jack sparrow>

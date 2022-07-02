@@ -34,9 +34,15 @@ class Lead(models.Model):
     # FOREIGN KEY
     agent = models.ForeignKey("Agent",on_delete=models.CASCADE)# 📝 "Agent" string is written to make ref to the Agent class even if Agent class was declared/defined after the Leads class
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
 # added user to the Agent as Agent is going to login in the system(CRM) not the leads
 class Agent(models.Model):
     # 📝 on_delete=CASCADE so if a user is deleted than that agent will be deleted as well
     # 📝 to have 1-1 relation i.e 1 user has exactly 1 agent related to it we use OneToOneField and it works exactly like forign key just the diff is that the relation is 1-1 strict only rather in case of foreign keys where 1 user could have multiple agents
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     
+    #📝:IMP string representation that returns the user email for Agent model when model manager is called on Agent via Agent.objects.all() in shell
+    def __str__(self):
+        return self.user.email
