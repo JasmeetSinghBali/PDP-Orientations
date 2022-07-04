@@ -279,3 +279,11 @@ Notes
                 def home_page(request):
 
 - **to use this function it should be added to urls.py in the root app folder lacrm**
+
+> 📝:IMP TEMPLATES in django returning html content from backend
+
+- **ref: views.py render method**
+
+- **📝: Way-1 IMP creating templates folder inside your app ref: leads->templates->leads as django find templates by templates->appName(folder) so no additional settings required to locate this html file/template**
+
+- **📝: Way-2 IMP creating templates folder inside root of the django app folder templates but this is not is not discovered by django so we tell django about this so in lacrm ->settings.py**
