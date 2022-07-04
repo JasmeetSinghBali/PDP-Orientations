@@ -267,4 +267,4 @@ Notes
                 # go to localhost:8000/admin
                 # login via superuser creds created earlier
 
-1:46
+
