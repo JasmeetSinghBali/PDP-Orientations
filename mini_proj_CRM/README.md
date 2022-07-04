@@ -287,3 +287,5 @@ Notes
 - **📝: Way-1 IMP creating templates folder inside your app ref: leads->templates->leads as django find templates by templates->appName(folder) so no additional settings required to locate this html file/template**
 
 - **📝: Way-2 IMP creating templates folder inside root of the django app folder templates but this is not is not discovered by django so we tell django about this so in lacrm ->settings.py**
+
+> Context 2:01
