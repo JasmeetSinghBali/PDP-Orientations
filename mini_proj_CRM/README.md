@@ -267,4 +267,15 @@ Notes
                 # go to localhost:8000/admin
                 # login via superuser creds created earlier
 
+                # register models inside leads->admin.py
+                # can be accessed/viewed via UI in built in django admin at localhost:8000/admin
 
+> 📝: IMP Views in django (request processing handlers that return response)
+
+- **ref: views.py in leads folder**
+
+- function based view that handle the view
+
+                def home_page(request):
+
+- **to use this function it should be added to urls.py in the root app folder lacrm**

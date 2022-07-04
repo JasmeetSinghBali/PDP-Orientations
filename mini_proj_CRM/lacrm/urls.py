@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from leads.views import home_page 
+
 urlpatterns = [
+    # 'admin/' specfies the route and the admin.site.urls is view that handle the request to this route
     path('admin/', admin.site.urls),
+    path('',home_page)
 ]
