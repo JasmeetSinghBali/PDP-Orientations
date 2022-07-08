@@ -14,12 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
-from leads.views import home_page 
+from django.urls import path, include
 
 urlpatterns = [
     # 'admin/' specfies the route and the admin.site.urls is view that handle the request to this route
     path('admin/', admin.site.urls),
-    path('',home_page)
+    # 📝:IMP including then url path for leads/ prefixed routes by reff to the leads/urls.py in leads app with namespace
+    path('leads/', include('leads.urls', namespace="leads"))
 ]

@@ -302,3 +302,9 @@ Notes
 
             # syntax for accessing context inside template
             {{}}
+
+> URL Namespaces
+
+- for the current project the lacrm-> urls.py is the main url file that django looks at to determine the urls/routes
+
+- **📝:IMP though each app could have their own urls.py file with urlpattern**
