@@ -313,3 +313,15 @@ Notes
 
             # primary key as argument for differnt leads on basis of primary key
             <pk>
+
+> Forms and create view
+
+- the forms from django or customized one must be wrapped inside a html form tag as we want intentionally to submit this form
+
+            <form>
+                {{form}}
+            </form>
+
+- by default if the form method is post than django requires to pass the csrf_token also that handles the csrf token mitigation and adds the csrf middleware to prevent csrf attacks.
+
+            {% csrf_token %}
