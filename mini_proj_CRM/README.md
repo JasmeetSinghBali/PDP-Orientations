@@ -308,3 +308,8 @@ Notes
 - for the current project the lacrm-> urls.py is the main url file that django looks at to determine the urls/routes
 
 - **📝:IMP though each app could have their own urls.py file with urlpattern**
+
+> arguments in path can be given ref: urls.py in leads
+
+            # primary key as argument for differnt leads on basis of primary key
+            <pk>

@@ -4,14 +4,20 @@ from django.http import HttpResponse
 from .models import Lead
 
 # Create your views here.
-def home_page(request):
+def lead_list(request):
     # where leads is a list of object
     leads = Lead.objects.all()
     context ={
         "leads": leads
     }
-    #return HttpResponse("Hello world")
-    # returning a html page as template when this route is hit
-    # render(requestObj, templatenameToRender)
-    # 📝now this context can be accessed inside the second_home_page template
-    return render(request, "second_home_page.html", context)
+    return render(request, "leads/lead_list.html", context)
+
+def lead_detail(request,pk):
+    # pk is the route path that can be reffernced to the pk in the leads table
+    print(pk)
+    lead = Lead.objects.get(id=pk)
+    print(lead)
+    context = {
+        "lead": lead
+    }
+    return render(request,"leads/lead_detail.html", context)
