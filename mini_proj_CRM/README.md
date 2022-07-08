@@ -288,4 +288,17 @@ Notes
 
 - **📝: Way-2 IMP creating templates folder inside root of the django app folder templates but this is not is not discovered by django so we tell django about this so in lacrm ->settings.py**
 
-> Context 2:01
+> Context (passing information into the django template that could be used by the template then)
+
+- we can pass context in render method itself as third paramter
+
+            # context is just dictionalry of information
+            context = {
+                key: value...
+            }
+            return render(request, "home_page.html", context)
+
+- smart template syntax then can be used to access context inside home_page.html template
+
+            # syntax for accessing context inside template
+            {{}}
