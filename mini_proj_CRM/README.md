@@ -325,3 +325,9 @@ Notes
 - by default if the form method is post than django requires to pass the csrf_token also that handles the csrf token mitigation and adds the csrf middleware to prevent csrf attacks.
 
             {% csrf_token %}
+
+> 📝: IMP Model Forms
+
+ref: leads/forms.py , leads/views.py
+
+- model form has form.save() all the data entered into form and then create a model and store it in db abstracting away all repeated logic that needs to be written.
