@@ -45,7 +45,39 @@ def lead_create(request):
     }
     return render(request, "leads/lead_create.html", context)
 
-# using LeadForm
+# using Simple LeadForm to update new lead
+def lead_update(request, pk):
+    lead = Lead.objects.get(id=pk)
+    form = LeadForm()
+    print(request.POST)
+    if request.method == "POST":
+        print('Receiving a post request')
+        # populate the form with the data filled and grabbed in request.POST
+        form = LeadForm(request.POST)
+        # is_valid makes sure all the data in the form is validated with proper types and so...
+        if form.is_valid():
+            print("form data is valid")
+            # cleaned_data is formatted data in dictionary format key:value pairs
+            print(form.cleaned_data)
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            age = form.cleaned_data['age']
+            # 🎯update each field for the lead from the form data
+            lead.first_name = first_name
+            lead.last_name = last_name
+            lead.age = age
+            lead.save()
+            print("The lead was updated.",lead)
+            # redirects to the leads page showing all leads
+            return redirect("/leads")
+    context = {
+        "form": form,
+        "lead": lead
+    }
+    return render(request, "leads/lead_update.html", context)
+
+
+# using Simple LeadForm to create new lead
 # def lead_create(request):
 #     # initially an empty instantiated form
 #     form = LeadForm()
