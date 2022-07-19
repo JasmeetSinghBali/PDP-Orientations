@@ -17,7 +17,7 @@
       }
     </style>
     <body>
-      <a href="/leads">Go back to leads</a>
+      <a href="{% url 'leads:lead-list' %}">Go back to leads</a>
       <hr />
       <h1>{{lead.first_name}} details page</h1>
 
@@ -27,8 +27,8 @@
         <p>Age: {{lead.age}}</p>
         <p>This agent responsible for this lead: {{lead.agent}}</p>
         <hr />
-        <a href="/leads/{{ lead.pk }}/update/">Update</a>
-        <a href="/leads/{{ lead.pk }}/delete/">Delete</a>
+        <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
+        <a href="{% url 'leads:lead-delete' lead.pk %}">Delete</a>
       </div>
     </body>
   </html>

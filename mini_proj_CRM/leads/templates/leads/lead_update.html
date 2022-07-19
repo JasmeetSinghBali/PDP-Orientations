@@ -17,7 +17,9 @@
       }
     </style>
     <body>
-      <a href="/leads">Go back to leads</a>
+      <a href="{% url 'leads:lead-detail' lead.pk %}"
+        >Go back to {{ lead.first_name}} {{ lead.last_name }}</a
+      >
       <hr />
       <h1>Update lead: {{ lead.first_name}} {{ lead.last_name }}</h1>
       <!--The csrf_token in django generate an hidden csrf middleware that is provided for security by django and used in respect to POST information-->

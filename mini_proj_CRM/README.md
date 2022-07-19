@@ -333,3 +333,20 @@ ref: leads/forms.py , leads/views.py
 - model form has form.save() all the data entered into form and then create a model and store it in db abstracting away all repeated logic that needs to be written.
 
 - model for instance=modelInstance during populating form can be used to update a specific instance of the model ref instance=lead in leads/views.py
+
+> URL namespace to make refferences of the route better
+
+- helps to pass reff for routes instead of passing hardcoded full urls paths where it is required.
+- ref: leads/urls.py, lead_list.py
+
+                    # go inside leads namespace and then look for the name of url paths -> lead-create
+                    # in {% %}
+                    <a href="{% url 'leads:lead-create' %}">Create a new lead</a>
+
+- in future if u want to change the name of the url u can directly change it in leads/urls.py at one place
+
+                    # for lead-detail route
+                    # {% url 'namespace:name' paramsUWantToPass %}
+                    <a href="{% url 'leads:lead-detail' lead.pk %}"
+
+Extending templates 3:13
