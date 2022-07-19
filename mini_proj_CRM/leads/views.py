@@ -64,6 +64,15 @@ def lead_update(request, pk):
     }
     return render(request,"leads/lead_update.html", context)
 
+# delete a lead from DB
+def lead_delete(request, pk):
+    lead = Lead.objects.get(id=pk)
+    # delete the instance lead with specific id
+    lead.delete()
+    return redirect("/leads")
+
+
+
 # using Simple LeadForm to update lead
 # def lead_update(request, pk):
 #     lead = Lead.objects.get(id=pk)

@@ -333,5 +333,3 @@ ref: leads/forms.py , leads/views.py
 - model form has form.save() all the data entered into form and then create a model and store it in db abstracting away all repeated logic that needs to be written.
 
 - model for instance=modelInstance during populating form can be used to update a specific instance of the model ref instance=lead in leads/views.py
-
-lead_delete timestamp-3:03
