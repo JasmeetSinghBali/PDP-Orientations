@@ -352,3 +352,9 @@ ref: leads/forms.py , leads/views.py
 > Extending templates [base template that can be inherited by other templates to avoid repetition of code]
 
 - refer: templates/base.html
+
+> Tailwind CSS [to base.html so that all templates can extend it]
+> ref: https://tailwindcss.com/docs/installation/play-cdn
+> ref: https://tailblocks.cc/
+
+Class based-views 338

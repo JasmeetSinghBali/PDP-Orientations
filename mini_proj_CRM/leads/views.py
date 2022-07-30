@@ -4,6 +4,10 @@ from django.http import HttpResponse
 from .models import Agent, Lead
 from .forms import LeadForm, LeadModelForm
 
+# landing page
+def landing_page(request):
+    return render(request, "landing.html")
+
 # Create your views here.
 def lead_list(request):
     # where leads is a list of object

@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from leads.views import landing_page
 
 urlpatterns = [
     # 'admin/' specfies the route and the admin.site.urls is view that handle the request to this route
     path('admin/', admin.site.urls),
+    # landing page url, with name to create link within other templates to redirect to the landing page
+    path('',landing_page,name='landing-page'),
     # 📝:IMP including then url path for leads/ prefixed routes by reff to the leads/urls.py in leads app with namespace
     path('leads/', include('leads.urls', namespace="leads"))
 ]
