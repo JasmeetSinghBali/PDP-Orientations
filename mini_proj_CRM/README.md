@@ -349,4 +349,6 @@ ref: leads/forms.py , leads/views.py
                     # {% url 'namespace:name' paramsUWantToPass %}
                     <a href="{% url 'leads:lead-detail' lead.pk %}"
 
-Extending templates 3:13
+> Extending templates [base template that can be inherited by other templates to avoid repetition of code]
+
+- refer: templates/base.html

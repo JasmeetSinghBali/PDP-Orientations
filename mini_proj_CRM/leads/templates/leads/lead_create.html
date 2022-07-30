@@ -1,30 +1,10 @@
-<DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="witdth=device-width, initial-scale=10" />
-      <title>Document</title>
-    </head>
-    <style>
-      .lead {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 6px;
-        padding-bottom: 6px;
-        margin-top: 10px;
-        background-color: #f6f6f6;
-        width: 100%;
-      }
-    </style>
-    <body>
-      <a href="{% url 'leads:lead-list' %}">Go back to leads</a>
-      <hr />
-      <h1>Create a new lead..</h1>
-      <!--The csrf_token in django generate an hidden csrf middleware that is provided for security by django and used in respect to POST information-->
-      <form method="post">
-        {% csrf_token %} {{form.as_p}}
-        <button type="submit">Submit</button>
-      </form>
-    </body>
-  </html>
-</DOCTYPE>
+{% extends "base.html" %} {% block content %}
+<a href="{% url 'leads:lead-list' %}">Go back to leads</a>
+<hr />
+<h1>Create a new lead..</h1>
+<!--The csrf_token in django generate an hidden csrf middleware that is provided for security by django and used in respect to POST information-->
+<form method="post">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit">Submit</button>
+</form>
+{% endblock content %}

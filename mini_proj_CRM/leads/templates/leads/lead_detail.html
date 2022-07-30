@@ -1,35 +1,15 @@
-<DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="witdth=device-width, initial-scale=10" />
-      <title>Document</title>
-    </head>
-    <style>
-      .lead {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 6px;
-        padding-bottom: 6px;
-        margin-top: 10px;
-        background-color: #f6f6f6;
-        width: 100%;
-      }
-    </style>
-    <body>
-      <a href="{% url 'leads:lead-list' %}">Go back to leads</a>
-      <hr />
-      <h1>{{lead.first_name}} details page</h1>
+{% extends "base.html" %} {% block content %}
+<a href="{% url 'leads:lead-list' %}">Go back to leads</a>
+<hr />
+<h1>{{lead.first_name}} details page</h1>
 
-      <div class="lead">
-        <p>firstName: {{lead.first_name}}</p>
-        <p>lastName: {{lead.last_name}}</p>
-        <p>Age: {{lead.age}}</p>
-        <p>This agent responsible for this lead: {{lead.agent}}</p>
-        <hr />
-        <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
-        <a href="{% url 'leads:lead-delete' lead.pk %}">Delete</a>
-      </div>
-    </body>
-  </html>
-</DOCTYPE>
+<div class="lead">
+  <p>firstName: {{lead.first_name}}</p>
+  <p>lastName: {{lead.last_name}}</p>
+  <p>Age: {{lead.age}}</p>
+  <p>This agent responsible for this lead: {{lead.agent}}</p>
+  <hr />
+  <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
+  <a href="{% url 'leads:lead-delete' lead.pk %}">Delete</a>
+</div>
+{% endblock content %}
